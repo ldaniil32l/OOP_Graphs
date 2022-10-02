@@ -229,7 +229,7 @@ class orientedGraph extends undirectedGraph
 
     // проверка на r-однородность
     public function is_regular() {
-        return 0;
+        return -1;
     }
 
 }
@@ -247,12 +247,11 @@ if(isset($_GET['vert'])){
     $objGraph->add_edge(0, 3, 2);
     $objGraph->add_edge(1, 3);
     $objGraph->add_edge(0, 4);
-    $objGraph->add_edge(0, 4);
     $objGraph->add_edge(2, 4, 10);
     echo '<p>Матрица смежности после добавления ребер</p>';
     $objGraph->print_matrix();
     // удалить ребра
-    $objGraph->add_edge(2, 4);
+    $objGraph->del_edge(2, 4);
     echo '<p>Матрица смежности после удаления ребер</p>';
     $objGraph->print_matrix();
     // добавить вершину
